@@ -1,0 +1,34 @@
+:root {
+	font-size: 62.5%;
+}
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+@font-face {
+	font-family: Hiragino Kaku Gothic Pro;
+	font-weight: 300;
+	src: url('../fonts/Hiragino Kaku Gothic Pro W3.otf') format('opentype');
+}
+@font-face {
+	font-family: Hiragino Kaku Gothic Pro;
+	font-weight: 500;
+	src: url('../fonts/Hiragino Kaku Gothic Pro W6.otf') format('opentype');
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,500&display=swap');
+
+a:link,
+a:visited {
+	color: white;
+	font-weight: 300;
+	font-size: 1.1rem;
+	line-height: 1.6rem;
+}
+a:hover,
+a:active {
+	color: $primary;
+}
+
