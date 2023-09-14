@@ -1,0 +1,44 @@
+.w-full {
+	width: 100%;
+}
+
+.flex {
+	display: flex;
+}
+.align-items {
+	&-center {
+		align-items: center;
+	}
+}
+
+@for $i from 1 through 60 {
+	.gap-#{$i} {
+		gap: #{$i}px;
+	}
+}
+@for $i from 1 through 60 {
+	.pd-bt-#{$i} {
+		padding-bottom: #{$i}px;
+	}
+}
+@for $i from 1 through 60 {
+	.mg-bt-#{$i} {
+		margin-bottom: #{$i}px;
+	}
+}
+
+.border-base {
+	border-bottom: 1px solid $borderBase !important;
+}
+
+.justify-content {
+	&-center {
+		justify-content: center;
+	}
+}
+
+.line-h-1 {
+	height: 2px;
+	width: 5.6rem;
+	background-color: $mainBg;
+}

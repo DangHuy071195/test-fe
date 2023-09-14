@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { DualAxes } from '@ant-design/plots'
 import { Line } from '@ant-design/plots'
 import { dayData, monthData, weekData, yearData } from '../../../mock-data/record-data'
@@ -6,7 +6,7 @@ import { Button, Row } from 'antd'
 
 const RecordChart = () => {
 	const [typeData, setTypeData] = useState('month')
-	const [data, setData] = useState<any>()
+	const [data, setData] = useState<any>([])
 
 	useEffect(() => {
 		switch (typeData) {
@@ -27,59 +27,62 @@ const RecordChart = () => {
 		}
 		console.log('monthData', monthData)
 	}, [typeData])
-	const config = {
-		data: monthData,
-		xField: 'month',
-		yField: 'value',
-		seriesField: 'category',
-		style: {
-			width: 'calc(100% - 20px)',
-		},
-		lineStyle: {
-			lineWidth: 3,
-		},
-
-		color: ['#FFCC21', '#8FE9D0'],
-
-		xAxis: {
-			label: {
-				// 数值格式化为千分位
-				formatter: (v: any) => `${v}月`,
+	const config = useMemo(() => {
+		return {
+			data,
+			xField: 'month',
+			yField: 'value',
+			seriesField: 'category',
+			style: {
+				width: 'calc(100% - 20px)',
 			},
-			line: {
-				style: {
-					lineWidth: 0,
+			lineStyle: {
+				lineWidth: 3,
+			},
+
+			color: ['#FFCC21', '#8FE9D0'],
+
+			xAxis: {
+				label: {
+					// 数值格式化为千分位
+					formatter: (v: any) =>
+						`${v}${typeData === 'day' ? '月' : typeData === 'week' ? '週' : typeData === 'month' ? '月' : '年'}`,
 				},
-			},
-			grid: {
-				line: {
-					lineWidth: 0,
-					stroke: '#777',
-					shadowBlur: 0,
-				},
-			},
-		},
-		yAxis: {
-			label: {
-				formatter: (v: any) => ``,
-			},
-
-			grid: {
 				line: {
 					style: {
 						lineWidth: 0,
+					},
+				},
+				grid: {
+					line: {
+						lineWidth: 0,
+						stroke: '#777',
 						shadowBlur: 0,
-						shadowColor: 'red',
 					},
 				},
 			},
-		},
-		point: {
-			shape: ({ category }: any) => {
-				return category === 'Gas fuel' ? 'square' : 'circle'
+			yAxis: {
+				label: {
+					formatter: (v: any) => ``,
+				},
+
+				grid: {
+					line: {
+						style: {
+							lineWidth: 0,
+							shadowBlur: 0,
+							shadowColor: 'red',
+						},
+					},
+				},
 			},
-		},
-	}
+			point: {
+				shape: ({ category }: any) => {
+					return category === 'Gas fuel' ? 'square' : 'circle'
+				},
+			},
+		}
+	}, [data, typeData])
 
 	const handleTypeData = (val: string) => {
 		setTypeData(val)

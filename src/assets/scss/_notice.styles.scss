@@ -1,0 +1,80 @@
+.notice {
+	max-width: 96rem;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	padding-top: 5.6rem;
+	&-categories {
+		display: flex;
+		gap: 3.2rem;
+		justify-content: space-between;
+		margin-bottom: 5.6rem;
+	}
+	&-cat {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: $secondaryBg;
+		padding: 2.4rem 0.8rem;
+		flex-basis: 216px;
+		height: 144px;
+		&__title {
+			color: $secondary;
+			font-family: Inter;
+			font-size: 2.2rem;
+			font-weight: 400;
+			line-height: 2.7rem;
+			text-align: center;
+		}
+		&__desc {
+			color: #fff;
+			font-family: Hiragino Kaku Gothic Pro;
+			font-size: 1.8rem;
+			font-weight: 300;
+			line-height: 2.6rem; /* 144.444% */
+		}
+		&__all {
+			display: grid;
+			grid-template-columns: repeat(4, minmax(min-content, 234px));
+			grid-template-rows: repeat(2, 222px);
+			grid-column-gap: 0.8rem;
+			grid-row-gap: 1.8rem;
+			margin-bottom: 2.6rem;
+		}
+		&__details {
+			display: flex;
+			flex-direction: column;
+			&--image {
+				position: relative;
+				margin-bottom: 0.7rem;
+				span {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					color: #fff;
+					font-family: Inter;
+					font-size: 1.5rem;
+					font-weight: 400;
+					line-height: 3rem;
+					display: inline-block;
+					background: $secondary;
+					padding: 0.2rem 0.8rem;
+				}
+			}
+			&--desc {
+				color: $mainBg;
+				font-family: Hiragino Kaku Gothic Pro;
+				font-size: 1.5rem;
+				font-weight: 300;
+				line-height: 2.2rem;
+			}
+			&--tags {
+				color: #ff963c;
+				font-family: Hiragino Kaku Gothic Pro;
+				font-size: 1.2rem;
+				font-weight: 300;
+				line-height: 2.2rem;
+			}
+		}
+	}
+}

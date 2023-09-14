@@ -32,3 +32,16 @@ a:active {
 	color: $primary;
 }
 
+::-webkit-scrollbar {
+	width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+	background: $borderBase;
+	border-radius: 37px;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: 37px;
+	background-color: $secondary;
+}
+

@@ -2,14 +2,16 @@
 	display: flex;
 	flex-direction: column;
 	gap: 5.6rem;
-	padding: 0 5rem;
 	margin-bottom: 5.6rem;
+	max-width: 960px;
+	margin: auto;
 	&-cat {
 		display: flex;
 		gap: 4.8rem;
 		justify-content: space-between;
 		margin-top: 5.8rem;
 		&__item {
+			cursor: pointer;
 			background-color: $secondary;
 			padding: 2.4rem;
 			position: relative;
@@ -43,6 +45,120 @@
 					padding: 0.2rem;
 				}
 			}
+		}
+	}
+}
+
+.activities {
+	background: #414141;
+	padding: 1.6rem 2.4rem;
+	color: #fff;
+	height: 264px;
+	&-list {
+		& .ant-row {
+			margin: 0 !important;
+			// & .ant-col {
+			// 	padding: 0 !important;
+			// }
+		}
+		& .ant-list-item {
+			border-bottom: 1px solid $borderBase;
+			margin-bottom: 1rem !important;
+			& .ant-list-item-meta .ant-list-item-meta-description {
+				color: $secondary;
+				font-family: Inter;
+				font-size: 1.5rem;
+				font-weight: 400;
+				line-height: 1.8rem;
+			}
+			.ant-list-item-meta .ant-list-item-meta-title {
+				color: #fff;
+				font-size: 1.5rem;
+				font-weight: 300;
+				line-height: 2.2rem;
+				& > div {
+					display: flex;
+					align-items: center;
+					gap: 0.3rem;
+				}
+				span {
+					&:first-child {
+						color: #fff;
+						font-size: 0.5rem;
+						line-height: 0.7rem; /* 140% */
+					}
+				}
+			}
+		}
+		&__title {
+			width: 100%;
+			&--time {
+				color: #ffcc21 !important;
+				font-family: Inter !important;
+				font-size: 1.8rem !important;
+				font-weight: 400;
+				line-height: 2.2rem !important; /* 122.222% */
+			}
+		}
+	}
+	&-title {
+		display: flex;
+		font-family: Inter;
+		margin-bottom: 0.2rem;
+		span {
+			&:first-child {
+				width: 9.6rem;
+				font-size: 1.5rem;
+				font-weight: 400;
+				line-height: 1.8rem;
+			}
+			&:last-child {
+				font-size: 2.2rem;
+				font-weight: 400;
+				line-height: 2.7rem;
+			}
+		}
+	}
+}
+
+.diary {
+	display: flex;
+	flex-direction: column;
+	&-list {
+		&__title {
+			color: $mainBg;
+			font-family: Inter;
+			font-size: 2.2rem;
+			font-weight: 400;
+			line-height: 3.2rem;
+		}
+		&__grid {
+			display: grid;
+			grid-template-columns: repeat(4, minmax(min-content, 231px));
+			grid-template-rows: repeat(2, 231px);
+			grid-gap: 1.2rem;
+			justify-content: space-between;
+		}
+	}
+	&-item {
+		border: 2px solid $borderSecondary;
+		padding: 1.6rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.8rem;
+		cursor: pointer;
+		&__title {
+			color: $mainBg;
+			font-family: Inter;
+			font-size: 1.8rem;
+			font-weight: 400;
+			line-height: 2.2rem;
+		}
+		&__desc {
+			color: $mainBg;
+			font-size: 1.2rem;
+			font-weight: 300;
+			line-height: 1.7rem;
 		}
 	}
 }
