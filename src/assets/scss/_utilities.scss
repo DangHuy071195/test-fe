@@ -42,3 +42,14 @@
 	width: 5.6rem;
 	background-color: $mainBg;
 }
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.scale-1 {
+	transition: all 0.5s ease;
+	&:hover {
+		transform: scale(1.15);
+	}
+}

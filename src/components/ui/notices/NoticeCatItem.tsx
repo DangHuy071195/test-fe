@@ -7,7 +7,7 @@ interface NoticeProps {
 }
 const NoticeCatItem: React.FC<NoticeProps> = ({ title, desc }) => {
 	return (
-		<div className='notice-cat'>
+		<div className='notice-cat scale-1'>
 			<span className='notice-cat__title'>{title}</span>
 			<Image src={DividerImg} />
 			<span className='notice-cat__desc'>{desc}</span>

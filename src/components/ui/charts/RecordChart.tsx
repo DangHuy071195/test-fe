@@ -25,7 +25,6 @@ const RecordChart = () => {
 			default:
 				setData(monthData)
 		}
-		console.log('monthData', monthData)
 	}, [typeData])
 	const config = useMemo(() => {
 		return {
@@ -81,6 +80,12 @@ const RecordChart = () => {
 					return category === 'Gas fuel' ? 'square' : 'circle'
 				},
 			},
+			animation: {
+				appear: {
+					duration: 4000,
+				},
+			},
+			legend: false,
 		}
 	}, [data, typeData])
 

@@ -2,6 +2,30 @@
 	display: flex;
 	max-width: 960px;
 	margin: auto;
+	&__menu {
+		// height: 464px;
+		display: flex;
+		flex-direction: column;
+		background-color: $borderBase;
+		.ant-image {
+			line-height: 1px;
+		}
+		span {
+			display: inline-block;
+			padding-top: 2.3rem;
+			padding-bottom: 2.3rem;
+			padding-left: 3.2rem;
+			color: #fff;
+			font-size: 1.8rem;
+			font-weight: 300;
+			line-height: 2.6rem;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
 	&__logo {
 		cursor: pointer;
 	}
@@ -28,6 +52,9 @@
 		}
 		&-menu {
 			cursor: pointer;
+		}
+		a.active {
+			color: $primary;
 		}
 	}
 }

@@ -14,7 +14,6 @@ const Activities = () => {
 		fetch('http://localhost:8000/exercises')
 			.then((res) => res.json())
 			.then((body) => {
-				console.log('body', body)
 				setData([...data, ...body])
 				setLoading(false)
 			})

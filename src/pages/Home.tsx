@@ -26,10 +26,10 @@ const Home = () => {
 				<HomeChart />
 			</div>
 			<div className='home-categories'>
-				<Image preview={false} src={MorningCat} />
-				<Image preview={false} src={LunchCat} />
-				<Image preview={false} src={DinnerCat} />
-				<Image preview={false} src={SlackCat} />
+				<Image preview={false} src={MorningCat} className='scale-1' />
+				<Image preview={false} src={LunchCat} className='scale-1' />
+				<Image preview={false} src={DinnerCat} className='scale-1' />
+				<Image preview={false} src={SlackCat} className='scale-1' />
 			</div>
 			<div className='home-categories-all'>
 				<div className='home-categories-all__item'>

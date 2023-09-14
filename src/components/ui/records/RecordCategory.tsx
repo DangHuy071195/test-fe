@@ -7,7 +7,7 @@ interface RecordProps {
 }
 const RecordCategory: React.FC<RecordProps> = ({ image, title, descriptions }) => {
 	return (
-		<div className='record-cat__item'>
+		<div className='record-cat__item scale-1'>
 			<Image src={image} preview={false} />
 			<div className='record-cat__item-info'>
 				<span>{title}</span>
