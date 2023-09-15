@@ -1,5 +1,5 @@
 import { Image } from 'antd'
-import React, { ReactNode } from 'react'
+import React from 'react'
 interface RecordProps {
 	image: string
 	title: string

@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import { Avatar, Col, Divider, List, Row, Skeleton } from 'antd'
+import { Col, Divider, List, Row, Skeleton } from 'antd'
 
 const Activities = () => {
 	const [loading, setLoading] = useState(false)
 	const [data, setData] = useState<any>([])
 
-	const loadMoreData = () => {
+	const loadMoreData = useCallback(() => {
 		if (loading) {
 			return
 		}
@@ -20,10 +20,12 @@ const Activities = () => {
 			.catch(() => {
 				setLoading(false)
 			})
-	}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
 
 	useEffect(() => {
 		loadMoreData()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	return (
@@ -79,3 +81,4 @@ const Activities = () => {
 }
 
 export default Activities
+

@@ -1,8 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { DualAxes } from '@ant-design/plots'
 import { Line } from '@ant-design/plots'
 import { dayData, monthData, weekData, yearData } from '../../../mock-data/record-data'
-import { Button, Row } from 'antd'
+import { Button } from 'antd'
 
 const RecordChart = () => {
 	const [typeData, setTypeData] = useState('month')

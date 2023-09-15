@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { DualAxes } from '@ant-design/plots'
+import React from 'react'
 import { Line } from '@ant-design/plots'
 import { data } from '../../../mock-data/data'
 

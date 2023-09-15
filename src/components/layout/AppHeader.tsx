@@ -1,5 +1,5 @@
 import { Image, Popover } from 'antd'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import LogoImg from '../../assets/images/logo.png'
 import IconMemo from '../../assets/images/icon_memo.png'
 import IconChallenge from '../../assets/images/icon_challenge.png'
@@ -12,12 +12,7 @@ import DividerMenu from '../../assets/images/divider-menu.png'
 const AppHeader = () => {
 	const navigate = useNavigate()
 	const location = useLocation()
-
 	const [open, setOpen] = useState(false)
-
-	const hide = () => {
-		setOpen(false)
-	}
 
 	const handleOpenChange = (newOpen: boolean) => {
 		setOpen(newOpen)
@@ -28,8 +23,8 @@ const AppHeader = () => {
 			<div className='app-header__logo' onClick={() => navigate('/')}>
 				<Image preview={false} src={LogoImg} />
 			</div>
-			<div className='app-header__navigation' onClick={() => navigate('/record')}>
-				<div className='app-header__navigation-memo cursor-pointer'>
+			<div className='app-header__navigation'>
+				<div className='app-header__navigation-memo cursor-pointer' onClick={() => navigate('/record')}>
 					<Image src={IconMemo} preview={false} />
 					<Link to='/record' className={location.pathname === '/record' ? 'active' : ''}>
 						自分の記録
@@ -41,11 +36,7 @@ const AppHeader = () => {
 						チャレンジ
 					</Link>
 				</div>
-				<div
-					className='app-header__navigation-info cursor-pointer'
-					onClick={() => {
-						navigate('/info')
-					}}>
+				<div className='app-header__navigation-info cursor-pointer' onClick={() => navigate('/info')}>
 					<Image src={IconInfo} preview={false} />
 					<Link to='/info' className={location.pathname === '/info' ? 'active' : ''}>
 						お知らせ
